@@ -29,9 +29,46 @@
 		FC44ABF52EAC114E00437A90 /* SpaceFlightNewsChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceFlightNewsChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FC44AC0F2EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Application/Home/HomeView.swift,
+				Application/Home/HomeViewModel.swift,
+				Models/Article.swift,
+				Models/ArticlesPaginatedResponse.swift,
+				Networking/APIClient.swift,
+				Networking/APIError.swift,
+				Networking/Endpoint.swift,
+				Networking/Repositories/ArticlesRepository.swift,
+				Networking/Repositories/ArticlesRepositoryProtocol.swift,
+			);
+			target = FC44ABEA2EAC114E00437A90 /* SpaceFlightNewsChallengeTests */;
+		};
+		FC44AC102EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Application/Home/HomeView.swift,
+				Application/Home/HomeViewModel.swift,
+				Models/Article.swift,
+				Models/ArticlesPaginatedResponse.swift,
+				Networking/APIClient.swift,
+				Networking/APIError.swift,
+				Networking/Endpoint.swift,
+				Networking/Repositories/ArticlesRepository.swift,
+				Networking/Repositories/ArticlesRepositoryProtocol.swift,
+			);
+			target = FC44ABF42EAC114E00437A90 /* SpaceFlightNewsChallengeUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FC44ABDE2EAC114C00437A90 /* SpaceFlightNewsChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC44AC0F2EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeTests" target */,
+				FC44AC102EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeUITests" target */,
+			);
 			path = SpaceFlightNewsChallenge;
 			sourceTree = "<group>";
 		};
