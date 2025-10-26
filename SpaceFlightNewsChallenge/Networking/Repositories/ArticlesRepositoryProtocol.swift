@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol ArticlesRepositoryProtocol {
+    func fetchArticles(search: String?, limit: Int) async throws -> PaginatedResponse<Article>
+    func fetchNextPage() async throws -> PaginatedResponse<Article>
+    func resetPagination()
+}
