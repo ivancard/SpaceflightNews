@@ -10,15 +10,11 @@ import SwiftData
 
 @main
 struct SpaceFlightNewsChallengeApp: App {
-    private let dependencies = AppDependencies.shared
+    @StateObject private var coordinator = AppCoordinator()
 
     var body: some Scene {
         WindowGroup {
-            HomeView(
-                viewModel: HomeViewModel(
-                    repository: dependencies.articlesRepository
-                )
-            )
+            coordinator.start()
             .preferredColorScheme(.light)
         }
     }
