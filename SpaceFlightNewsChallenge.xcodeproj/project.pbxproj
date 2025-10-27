@@ -33,6 +33,7 @@
 		FC44AC0F2EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
 				Models/Article.swift,
@@ -42,12 +43,14 @@
 				Networking/Endpoint.swift,
 				Networking/Repositories/ArticlesRepository.swift,
 				Networking/Repositories/ArticlesRepositoryProtocol.swift,
+				Resources/AppDependencies.swift,
 			);
 			target = FC44ABEA2EAC114E00437A90 /* SpaceFlightNewsChallengeTests */;
 		};
 		FC44AC102EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
 				Models/Article.swift,
@@ -57,6 +60,21 @@
 				Networking/Endpoint.swift,
 				Networking/Repositories/ArticlesRepository.swift,
 				Networking/Repositories/ArticlesRepositoryProtocol.swift,
+				Resources/AppDependencies.swift,
+			);
+			target = FC44ABF42EAC114E00437A90 /* SpaceFlightNewsChallengeUITests */;
+		};
+		FC44ACB92EAE851500437A90 /* Exceptions for "SpaceFlightNewsChallengeTests" folder in "SpaceFlightNewsChallenge" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockAPIClient.swift,
+			);
+			target = FC44ABDB2EAC114C00437A90 /* SpaceFlightNewsChallenge */;
+		};
+		FC44ACBA2EAE851500437A90 /* Exceptions for "SpaceFlightNewsChallengeTests" folder in "SpaceFlightNewsChallengeUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Mock/MockAPIClient.swift,
 			);
 			target = FC44ABF42EAC114E00437A90 /* SpaceFlightNewsChallengeUITests */;
 		};
@@ -74,6 +92,10 @@
 		};
 		FC44ABEE2EAC114E00437A90 /* SpaceFlightNewsChallengeTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FC44ACB92EAE851500437A90 /* Exceptions for "SpaceFlightNewsChallengeTests" folder in "SpaceFlightNewsChallenge" target */,
+				FC44ACBA2EAE851500437A90 /* Exceptions for "SpaceFlightNewsChallengeTests" folder in "SpaceFlightNewsChallengeUITests" target */,
+			);
 			path = SpaceFlightNewsChallengeTests;
 			sourceTree = "<group>";
 		};
@@ -432,6 +454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB9XB6K43X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -463,6 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB9XB6K43X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

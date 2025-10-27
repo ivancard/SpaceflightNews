@@ -1,0 +1,211 @@
+{
+  "count": 30027,
+  "next": "https://api.spaceflightnewsapi.net/v4/articles/?limit=10&offset=10",
+  "previous": null,
+  "results": [
+    {
+      "id": 33645,
+      "title": "Astrobotic delays Griffin-1 lander mission to mid-2026",
+      "authors": [
+        {
+          "name": "Jeff Foust",
+          "socials": {
+            "x": "https://x.com/jeff_foust",
+            "youtube": "",
+            "instagram": "",
+            "linkedin": "https://www.linkedin.com/in/jefffoust",
+            "mastodon": "https://mastodon.social/@jfoust",
+            "bluesky": "https://bsky.app/profile/jfoust.bsky.social"
+          }
+        }
+      ],
+      "url": "https://spacenews.com/astrobotic-delays-griffin-1-lander-mission-to-mid-2026/",
+      "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2025/10/griffin1-oct25.jpeg?fit=1024%2C576&ssl=1",
+      "news_site": "SpaceNews",
+      "summary": "\nAstrobotic Technology says it now plans to launch its large lunar lander carrying a commercial rover no earlier than mid-2026.\nThe post Astrobotic delays Griffin-1 lander mission to mid-2026 appeared first on SpaceNews.",
+      "published_at": "2025-10-26T14:22:34Z",
+      "updated_at": "2025-10-26T14:30:27.289010Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33644,
+      "title": "Kymeta to supply flat-panel satellite antennas to U.S. Army",
+      "authors": [
+        {
+          "name": "Sandra Erwin",
+          "socials": null
+        }
+      ],
+      "url": "https://spacenews.com/kymeta-to-supply-flat-panel-satellite-antennas-to-u-s-army/",
+      "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2025/10/Kymeta-Osprey-u8-on-ISV.jpg.jpeg?fit=1024%2C768&ssl=1",
+      "news_site": "SpaceNews",
+      "summary": "\nIn a pilot program, the 4th Infantry Division will use Kymeta’s Osprey u8 terminals designed to communicate with both low Earth orbit and geostationary satellites\nThe post Kymeta to supply flat-panel satellite antennas to U.S. Army appeared first on SpaceNews.",
+      "published_at": "2025-10-26T13:06:24Z",
+      "updated_at": "2025-10-26T13:10:16.164641Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33643,
+      "title": "H3 launches first HTV-X cargo spacecraft",
+      "authors": [
+        {
+          "name": "Jeff Foust",
+          "socials": {
+            "x": "https://x.com/jeff_foust",
+            "youtube": "",
+            "instagram": "",
+            "linkedin": "https://www.linkedin.com/in/jefffoust",
+            "mastodon": "https://mastodon.social/@jfoust",
+            "bluesky": "https://bsky.app/profile/jfoust.bsky.social"
+          }
+        }
+      ],
+      "url": "https://spacenews.com/h3-launches-first-htv-x-cargo-spacecraft/",
+      "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2025/10/h3-htvx1.jpeg?fit=1024%2C603&ssl=1",
+      "news_site": "SpaceNews",
+      "summary": "\nJapan launched the first of a new generation of cargo spacecraft to the International Space Station, with potential applications beyond low Earth orbit.\nThe post H3 launches first HTV-X cargo spacecraft appeared first on SpaceNews.",
+      "published_at": "2025-10-26T00:50:49Z",
+      "updated_at": "2025-10-26T01:00:41.771954Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33642,
+      "title": "JAXA’s HTV-X1 set to launch to ISS aboard H3 Rocket",
+      "authors": [
+        {
+          "name": "Eleanor Day",
+          "socials": null
+        }
+      ],
+      "url": "https://www.nasaspaceflight.com/2025/10/jaxas-htv-x1-launch-h3-rocket/",
+      "image_url": "https://www.nasaspaceflight.com/wp-content/uploads/2025/10/h3-render.jpg",
+      "news_site": "NASASpaceflight",
+      "summary": "The Japan Aerospace Exploration Agency (JAXA) is set to launch its advanced HTV-X1 cargo spacecraft…\nThe post JAXA’s HTV-X1 set to launch to ISS aboard H3 Rocket appeared first on NASASpaceFlight.com.",
+      "published_at": "2025-10-25T19:14:19Z",
+      "updated_at": "2025-10-25T19:20:14.926519Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33641,
+      "title": "Live coverage: SpaceX to launch 28 Starlink satellites on Falcon 9 rocket from Cape Canaveral",
+      "authors": [
+        {
+          "name": "Will Robinson-Smith",
+          "socials": null
+        }
+      ],
+      "url": "https://spaceflightnow.com/2025/10/25/live-coverage-spacex-to-launch-28-starlink-satellites-on-falcon-9-rocket-from-cape-canaveral-14/",
+      "image_url": "http://spaceflightnow.com/wp-content/uploads/2024/10/20241022_Starlink_6-61_prelaunch_AB-1-678x445.jpg",
+      "news_site": "Spaceflight Now",
+      "summary": "This will be the 230th launch of Starlink V2 Mini satellites to date. SpaceX is targeting liftoff of the Starlink 10-21 mission from pad 40 at Cape Canaveral Space Force Station during a window that opens at 10:05 a.m. EDT (1405 UTC). ",
+      "published_at": "2025-10-25T15:43:22Z",
+      "updated_at": "2025-10-25T15:50:17.476377Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33640,
+      "title": "Unions’ Reactions Mixed to Airbus, Thales, and Leonardo Merger",
+      "authors": [
+        {
+          "name": "European Spaceflight",
+          "socials": null
+        }
+      ],
+      "url": "https://europeanspaceflight.com/unions-reactions-mixed-to-airbus-thales-and-leonardo-merger/",
+      "image_url": "https://europeanspaceflight.com/wp-content/uploads/2025/10/Unions-Reactions-Mixed-to-Airbus-Thales-and-Leonardo-Merger.webp",
+      "news_site": "European Spaceflight",
+      "summary": "With the announcement that Airbus, Thales, and Leonardo have signed a memorandum of understanding to combine their space businesses into a single company, trade unions representing the affected workers have given mixed reactions to the news. The project, which, while not officially named, has been referred to by media sources as Project Bromo, would combine […]\nThe post Unions’ Reactions Mixed to Airbus, Thales, and Leonardo Merger appeared first on European Spaceflight.",
+      "published_at": "2025-10-25T06:00:23Z",
+      "updated_at": "2025-10-25T06:10:12.633469Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33639,
+      "title": "Live coverage: SpaceX to launch 28 Starlink satellites on Falcon 9 rocket from Vandenberg SFB",
+      "authors": [
+        {
+          "name": "Will Robinson-Smith",
+          "socials": null
+        }
+      ],
+      "url": "https://spaceflightnow.com/2025/10/24/live-coverage-spacex-to-launch-28-starlink-satellites-on-falcon-9-rocket-from-vandenberg-sfb-3/",
+      "image_url": "http://spaceflightnow.com/wp-content/uploads/2025/09/20250818_Starlink_G17_5_Vertical.jpg",
+      "news_site": "Spaceflight Now",
+      "summary": "The mission is poised to featured the 160th landing of a booster on the drone ship, ‘Of Course I Still Love You’. Liftoff from pad 4E at Vandenberg Space Force Base is scheduled for 7:20 a.m. PDT (10:20 a.m. EDT / 1420 UTC). ",
+      "published_at": "2025-10-24T23:31:17Z",
+      "updated_at": "2025-10-24T23:40:21.987839Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33638,
+      "title": "Starbase Pad 1 ends an era, enters preparations for the next phase",
+      "authors": [
+        {
+          "name": "Ryan Weber",
+          "socials": null
+        }
+      ],
+      "url": "https://www.nasaspaceflight.com/2025/10/pad-1-era-preparations-next-phase/",
+      "image_url": "https://www.nasaspaceflight.com/wp-content/uploads/2025/10/Booster-15-about-to-be-caught-by-Pad-1-scaled.jpg",
+      "news_site": "NASASpaceflight",
+      "summary": "After 11 Flights and many tests, the booster test stand turned launch mount has reached…\nThe post Starbase Pad 1 ends an era, enters preparations for the next phase appeared first on NASASpaceFlight.com.",
+      "published_at": "2025-10-24T16:56:32Z",
+      "updated_at": "2025-10-24T17:00:20.354784Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33637,
+      "title": "Global Defense Satcom Commercial Service Revenues Positioned to Skyrocket Past $8.6 Billion by 2034",
+      "authors": [
+        {
+          "name": "Novaspace",
+          "socials": null
+        }
+      ],
+      "url": "https://spacenews.com/global-defense-satcom-commercial-service-revenues-positioned-to-skyrocket-past-8-6-billion-by-2034/",
+      "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2025/04/novaspace-square-1-scaled.png?fit=1024%2C1024&ssl=1",
+      "news_site": "SpaceNews",
+      "summary": "\nNGSO systems drive explosive growth as satellite connectivity becomes mission-critical for modern defense operations Paris, France [October, 2025] – Novaspace has released the first edition of its Satellite Communications for […]\nThe post Global Defense Satcom Commercial Service Revenues Positioned to Skyrocket Past $8.6 Billion by 2034 appeared first on SpaceNews.",
+      "published_at": "2025-10-24T16:48:43Z",
+      "updated_at": "2025-10-24T16:50:18.578338Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    },
+    {
+      "id": 33634,
+      "title": "Week in images: 20-24 October 2025",
+      "authors": [
+        {
+          "name": "ESA",
+          "socials": null
+        }
+      ],
+      "url": "https://www.esa.int/About_Us/Week_in_images/Week_in_images_20-24_October_2025",
+      "image_url": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2025/10/first_image_of_nitrogen_dioxide_from_sentinel-4/26932057-1-eng-GB/First_image_of_nitrogen_dioxide_from_Sentinel-4_card_full.jpg",
+      "news_site": "ESA",
+      "summary": "Week in images: 20-24 October 2025",
+      "published_at": "2025-10-24T13:15:00Z",
+      "updated_at": "2025-10-24T13:10:11.718025Z",
+      "featured": false,
+      "launches": [],
+      "events": []
+    }
+  ]
+}

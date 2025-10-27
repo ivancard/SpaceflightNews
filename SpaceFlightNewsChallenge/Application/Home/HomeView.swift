@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var searchText: String = ""
-    @State private var articles: [String] = []
+    @StateObject private var viewModel: HomeViewModel
+
+    @MainActor
+    init(viewModel: HomeViewModel? = nil) {
+        if let viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            let repository = AppDependencies.shared.articlesRepository
+            _viewModel = StateObject(wrappedValue: HomeViewModel(repository: repository))
+        }
+    }
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -21,6 +30,9 @@ struct HomeView: View {
                 articlesList
             }
         }
+        .task {
+            await viewModel.loadArticles()
+        }
     }
 }
 
@@ -30,17 +42,12 @@ struct HomeView: View {
 
 private extension HomeView {
     var header: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Space Flight News")
-                .font(.largeTitle.bold())
-                .foregroundStyle(.white)
-                .padding(.top, 44)
-
+        VStack(alignment: .leading, spacing: 18) {
             searchBar
         }
         .padding(.horizontal, 16)
-        .padding(.bottom, 24)
-        .padding(.top, 12)
+        .padding(.bottom, 16)
+        .padding(.top, 60)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(spaceIndigo)
         .ignoresSafeArea(edges: .top)
@@ -51,7 +58,7 @@ private extension HomeView {
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(Color.gray.opacity(0.7))
 
-            TextField("Buscar en Space Flight News", text: $searchText)
+            TextField("Buscar en Space Flight News", text: $viewModel.searchText)
                 .textInputAutocapitalization(.none)
                 .disableAutocorrection(true)
         }
@@ -64,16 +71,21 @@ private extension HomeView {
 
     var articlesList: some View {
         List {
-            if articles.isEmpty {
+            if viewModel.articles.isEmpty {
                 Text("Aun no hay articulos")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 40)
                     .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 32, leading: 16, bottom: 32, trailing: 16))
+                    .listRowBackground(Color.clear)
             } else {
-                ForEach(articles, id: \.self) { article in
-                    Text(article)
+                ForEach(viewModel.articles) { article in
+                    ArticleRow(article: article)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
+                        .listRowBackground(Color.clear)
                 }
             }
         }

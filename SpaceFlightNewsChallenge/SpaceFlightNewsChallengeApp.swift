@@ -10,9 +10,16 @@ import SwiftData
 
 @main
 struct SpaceFlightNewsChallengeApp: App {
+    private let dependencies = AppDependencies.shared
+
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(
+                viewModel: HomeViewModel(
+                    repository: dependencies.articlesRepository
+                )
+            )
+            .preferredColorScheme(.light)
         }
     }
 }
