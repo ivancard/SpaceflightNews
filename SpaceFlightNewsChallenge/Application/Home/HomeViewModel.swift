@@ -18,9 +18,14 @@ class HomeViewModel: ObservableObject {
     
     private let repository: ArticlesRepositoryProtocol
     private var searchTask: Task<Void, Never>?
+    private let openArticle: (Article) -> Void
     
-    init(repository: ArticlesRepositoryProtocol) {
+    init(
+        repository: ArticlesRepositoryProtocol,
+        openArticle: @escaping (Article) -> Void = { _ in }
+    ) {
         self.repository = repository
+        self.openArticle = openArticle
     }
     
     func loadArticles() async {
@@ -62,5 +67,10 @@ class HomeViewModel: ObservableObject {
             repository.resetPagination()
             await loadArticles()
         }
+    }
+    
+    func didSelect(article: Article) {
+        print("[HomeViewModel] didSelect article", article.id)
+        openArticle(article)
     }
 }

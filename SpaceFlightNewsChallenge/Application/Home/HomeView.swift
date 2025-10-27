@@ -43,11 +43,16 @@ struct HomeView: View {
 private extension HomeView {
     var header: some View {
         VStack(alignment: .leading, spacing: 18) {
+            Text("Space Flight News")
+                .font(.largeTitle.bold())
+                .foregroundStyle(.white)
+                .padding(.top, 12)
+
             searchBar
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 16)
-        .padding(.top, 60)
+        .padding(.top, 48)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(spaceIndigo)
         .ignoresSafeArea(edges: .top)
@@ -82,10 +87,16 @@ private extension HomeView {
                     .listRowBackground(Color.clear)
             } else {
                 ForEach(viewModel.articles) { article in
-                    ArticleRow(article: article)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
-                        .listRowBackground(Color.clear)
+                    Button {
+                        print("clicked article \(article.id)")
+                        viewModel.didSelect(article: article)
+                    } label: {
+                        ArticleRow(article: article)
+                    }
+                    .buttonStyle(.plain)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
+                    .listRowBackground(Color.clear)
                 }
             }
         }
