@@ -33,6 +33,7 @@
 		FC44AC0F2EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Application/ArticleDetail/ArticlesDetailView.swift,
 				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
@@ -50,6 +51,7 @@
 		FC44AC102EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Application/ArticleDetail/ArticlesDetailView.swift,
 				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
