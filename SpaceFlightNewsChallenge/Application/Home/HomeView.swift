@@ -15,7 +15,7 @@ struct HomeView: View {
         if let viewModel {
             _viewModel = StateObject(wrappedValue: viewModel)
         } else {
-            let repository = ArticlesRepository(apiClient: APIClient())
+            let repository = AppDependencies.shared.articlesRepository
             _viewModel = StateObject(wrappedValue: HomeViewModel(repository: repository))
         }
     }
@@ -42,17 +42,12 @@ struct HomeView: View {
 
 private extension HomeView {
     var header: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Space Flight News")
-                .font(.largeTitle.bold())
-                .foregroundStyle(.white)
-                .padding(.top, 44)
-
+        VStack(alignment: .leading, spacing: 18) {
             searchBar
         }
         .padding(.horizontal, 16)
-        .padding(.bottom, 24)
-        .padding(.top, 12)
+        .padding(.bottom, 16)
+        .padding(.top, 60)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(spaceIndigo)
         .ignoresSafeArea(edges: .top)
@@ -83,9 +78,14 @@ private extension HomeView {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 40)
                     .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 32, leading: 16, bottom: 32, trailing: 16))
+                    .listRowBackground(Color.clear)
             } else {
                 ForEach(viewModel.articles) { article in
-                    Text(article.title)
+                    ArticleRow(article: article)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
+                        .listRowBackground(Color.clear)
                 }
             }
         }
