@@ -9,11 +9,62 @@ import Foundation
 import SwiftUI
 internal import Combine
 
+enum HomeViewError: Equatable {
+    case connection
+    case generic
+
+    var message: String {
+        switch self {
+        case .connection:
+            return "Error de conexión"
+        case .generic:
+            return "Hubo un error"
+        }
+    }
+
+    static func map(from error: Error) -> HomeViewError {
+        if let apiError = error as? APIError {
+            switch apiError {
+            case .networkError(let underlying):
+                return mapFromURLError(underlying) ?? .connection
+            default:
+                return .generic
+            }
+        }
+
+        if let mapped = mapFromURLError(error) {
+            return mapped
+        }
+
+        return .generic
+    }
+
+    private static func mapFromURLError(_ error: Error) -> HomeViewError? {
+        guard let urlError = error as? URLError else { return nil }
+
+        let connectionCodes: Set<URLError.Code> = [
+            .notConnectedToInternet,
+            .networkConnectionLost,
+            .timedOut,
+            .cannotFindHost,
+            .cannotConnectToHost,
+            .dnsLookupFailed
+        ]
+
+        if connectionCodes.contains(urlError.code) {
+            return .connection
+        }
+
+        return .generic
+    }
+}
+
 @MainActor
 class HomeViewModel: ObservableObject {
     @Published var articles: [Article] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
+    @Published var listError: HomeViewError?
     @Published var searchText = ""
     @Published var isShowingSearchResults = false
     
@@ -35,6 +86,7 @@ class HomeViewModel: ObservableObject {
     func loadArticles() async {
         isLoading = true
         errorMessage = nil
+        listError = nil
         
         do {
             let response = try await repository.fetchArticles(
@@ -44,6 +96,7 @@ class HomeViewModel: ObservableObject {
             articles = response.results
         } catch {
             errorMessage = error.localizedDescription
+            listError = HomeViewError.map(from: error)
         }
         
         isLoading = false
@@ -57,6 +110,7 @@ class HomeViewModel: ObservableObject {
             articles.append(contentsOf: response.results)
         } catch {
             errorMessage = error.localizedDescription
+            listError = HomeViewError.map(from: error)
         }
     }
     
@@ -84,6 +138,8 @@ class HomeViewModel: ObservableObject {
 
     func applySearch(query: String) {
         searchTask?.cancel()
+        isLoading = true
+        articles.removeAll()
         searchText = query
         repository.resetPagination()
         isShowingSearchResults = !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -95,6 +151,8 @@ class HomeViewModel: ObservableObject {
 
     func clearSearch() {
         searchTask?.cancel()
+        isLoading = true
+        articles.removeAll()
         searchText = ""
         isShowingSearchResults = false
         repository.resetPagination()

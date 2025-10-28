@@ -105,8 +105,12 @@ private extension SearchView {
             viewModel.cancel()
         } label: {
             Text("Cancelar")
-                .bold()
+                .font(.footnote.weight(.semibold))
                 .foregroundStyle(.white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(ColorsHelper.mainDark)
+                .clipShape(Capsule())
         }
     }
 
