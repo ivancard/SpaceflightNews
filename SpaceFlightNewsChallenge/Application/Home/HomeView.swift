@@ -142,6 +142,10 @@ private extension HomeView {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 16, trailing: 16))
                         .listRowBackground(Color.clear)
+                        .task {
+                            guard article == viewModel.articles.last else { return }
+                            await viewModel.loadMoreArticles()
+                        }
                     }
                 }
             }
