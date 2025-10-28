@@ -26,10 +26,6 @@ Aplicación iOS que consume la API pública de [Space Flight News](https://www.s
 - Búsqueda con historial persistido usando `SwiftData`; se puede reutilizar cada término o eliminar entradas.
 - Detalle de cada artículo con imagen, resumen, autor, fecha formateada y acceso directo al artículo original.
 
-## Capturas de pantalla
-
-![Capturas de pantalla de la app](./app-images-example.png)
-
 ## Frameworks, Arquitectura y Patrones de diseño
 
 - `SwiftUI` + `MVVM` para separar la lógica de presentación de las vistas declarativas.
