@@ -19,6 +19,17 @@ Aplicación iOS que consume la API pública de [Space Flight News](https://www.s
 - Minimum deployment version: iOS 26
 - Xcode 26
 
+## Funcionalidades
+
+- Listado de artículos recientes con paginación automática al llegar al final de la lista.
+- Estado visual consistente: placeholders con shimmer durante carga, mensajes de error recuperables, vacío amigable.
+- Búsqueda con historial persistido usando `SwiftData`; se puede reutilizar cada término o eliminar entradas.
+- Detalle de cada artículo con imagen, resumen, autor, fecha formateada y acceso directo al artículo original.
+
+## Capturas de pantalla
+
+[app-images-example.png](app-images-example.png)
+
 ## Frameworks, Arquitectura y Patrones de diseño
 
 - `SwiftUI` + `MVVM` para separar la lógica de presentación de las vistas declarativas.
@@ -26,13 +37,6 @@ Aplicación iOS que consume la API pública de [Space Flight News](https://www.s
 - Patrón `Coordinator` para manejar navegación sin que las vistas conozcan rutas concretas.
 - `AppDependencies` actúa como contenedor centralizado para las dependencias principales.
 - `Delegate` para delegar en la vista padre la función de busqueda.
-
-## Funcionalidades
-
-- Listado de artículos recientes con paginación automática al llegar al final de la lista.
-- Estado visual consistente: placeholders con shimmer durante carga, mensajes de error recuperables, vacío amigable.
-- Búsqueda con historial persistido usando `SwiftData`; se puede reutilizar cada término o eliminar entradas.
-- Detalle de cada artículo con imagen, resumen, autor, fecha formateada y acceso directo al artículo original.
 
 ## Pruebas
 
