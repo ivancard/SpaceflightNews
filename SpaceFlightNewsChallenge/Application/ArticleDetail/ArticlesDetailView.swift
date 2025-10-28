@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     let article: Article
+    @Environment(\.openURL) private var openURL
     
     init(article: Article) {
         self.article = article
@@ -23,6 +24,7 @@ struct ArticleDetailView: View {
                     articleTitle
                     articleData
                     articleSummary
+                    articleLinkSection
                 }
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -94,7 +96,12 @@ private extension ArticleDetailView {
             Text(article.newsSite)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text(article.authors.first?.name ?? "")
+            if !formattedPublishedDate.isEmpty {
+                Text("Publicado el \(formattedPublishedDate)")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            Text(primaryAuthor.isEmpty ? "Autor desconocido" : primaryAuthor)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -103,9 +110,79 @@ private extension ArticleDetailView {
 
 private extension ArticleDetailView {
     var articleSummary: some View {
-        Text(article.summary)
-            .font(.body)
+        let trimmedSummary = article.summary.trimmingCharacters(in: .whitespacesAndNewlines)
+        return Group {
+            if trimmedSummary.isEmpty {
+                Text("Este artículo no tiene un resumen disponible.")
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+            } else {
+                Text(trimmedSummary)
+                    .font(.body)
+            }
+        }
     }
+}
+
+private extension ArticleDetailView {
+    var articleLinkSection: some View {
+        Group {
+            if let destinationURL = URL(string: article.url) {
+                Button {
+                    openURL(destinationURL)
+                } label: {
+                    Label("Leer artículo en el sitio", systemImage: "safari")
+                        .font(.body.weight(.semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 3)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(ColorsHelper.mainDark)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.top, 22)
+            } else {
+                Text("El enlace original no está disponible.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+private extension ArticleDetailView {
+    var primaryAuthor: String {
+        article.authors.first?.name.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    }
+    
+    var formattedPublishedDate: String {
+        if let date = ArticleDetailView.isoFormatterWithFractional.date(from: article.publishedAt) {
+            return ArticleDetailView.displayFormatter.string(from: date)
+        }
+        if let date = ArticleDetailView.isoFormatter.date(from: article.publishedAt) {
+            return ArticleDetailView.displayFormatter.string(from: date)
+        }
+        return ""
+    }
+    
+    static let isoFormatterWithFractional: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
+    
+    static let isoFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter
+    }()
+    
+    static let displayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "es_ES")
+        return formatter
+    }()
 }
 
 #Preview {

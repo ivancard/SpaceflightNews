@@ -25,6 +25,7 @@ struct ArticleRow: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 
+                Spacer()
                 HStack(spacing: 12) {
                     Text(article.newsSite)
                         .font(.system(size: 12, weight: .medium))
@@ -97,15 +98,24 @@ private extension ArticleRow {
     }
     
     var formattedDate: String {
-        guard let date = ArticleRow.isoFormatter.date(from: article.publishedAt) else {
-            return ""
+        if let date = ArticleRow.isoFormatterWithFractional.date(from: article.publishedAt) {
+            return ArticleRow.displayFormatter.string(from: date)
         }
-        return ArticleRow.displayFormatter.string(from: date)
+        if let date = ArticleRow.isoFormatter.date(from: article.publishedAt) {
+            return ArticleRow.displayFormatter.string(from: date)
+        }
+        return ""
     }
+    
+    static let isoFormatterWithFractional: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
     
     static let isoFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        formatter.formatOptions = [.withInternetDateTime]
         return formatter
     }()
     

@@ -7,6 +7,7 @@
 
 import Foundation
 internal import Combine
+import os
 
 @MainActor
 protocol SearchViewDelegate: AnyObject {
