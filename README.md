@@ -8,10 +8,11 @@ Aplicación iOS que consume la API pública de [Space Flight News](https://www.s
 2. Abrir en excode SpaceFlightNewsChallenge.xcodeproj
 3. Iniciar compilacion presionando (`⌘ + R`) con un destino de ejecucion seleccionado (fisico o emulador).
 
-### Datos del hardware de desarrollo
+### Datos de hardware y software de desarrollo
 
-- Xcode 26 con swift 6 y sobtr macOS 26
-- Dispositivo fisico de ejecucion: 13 Pro iOS 26
+- Mac M3 2023 con macOS 26
+- Xcode 26 con swift 6
+- Dispositivo fisico de ejecucion: 13 Pro, iOS 26
 
 ### Requisitos
 
