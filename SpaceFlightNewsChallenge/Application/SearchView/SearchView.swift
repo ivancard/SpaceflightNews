@@ -38,7 +38,7 @@ struct SearchView: View {
     }
 }
 
-private extension SearchView {
+extension SearchView {
     var header: some View {
         HStack(alignment: .center, spacing: 16) {
             searchBar
@@ -163,8 +163,7 @@ private extension SearchView {
         }
     }
 }
-
-private extension SearchView {
+extension SearchView {
     var isSearchTextEmpty: Bool {
         trimmedInput.isEmpty
     }

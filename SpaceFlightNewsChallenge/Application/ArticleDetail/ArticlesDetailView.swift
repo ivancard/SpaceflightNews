@@ -36,7 +36,7 @@ struct ArticleDetailView: View {
     }
 }
 
-private extension ArticleDetailView {
+extension ArticleDetailView {
     var articleImage: some View {
         GeometryReader { geometry in
             AsyncImage(url: URL(string: article.imageUrl)) { phase in
@@ -58,10 +58,8 @@ private extension ArticleDetailView {
         }
         .frame(height: 300)
     }
-    
-    var placeholderBackground: Color {
-        Color.white
-    }
+
+    var placeholderBackground: Color { Color.white }
 
     var placeholderView: some View {
         placeholderBackground
@@ -81,16 +79,12 @@ private extension ArticleDetailView {
                     .foregroundStyle(.secondary)
             )
     }
-}
 
-private extension ArticleDetailView {
     var articleTitle: some View {
         Text(article.title)
             .font(.title)
     }
-}
 
-private extension ArticleDetailView {
     var articleData: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(article.newsSite)
@@ -106,9 +100,7 @@ private extension ArticleDetailView {
                 .foregroundStyle(.secondary)
         }
     }
-}
 
-private extension ArticleDetailView {
     var articleSummary: some View {
         let trimmedSummary = article.summary.trimmingCharacters(in: .whitespacesAndNewlines)
         return Group {
@@ -122,9 +114,7 @@ private extension ArticleDetailView {
             }
         }
     }
-}
 
-private extension ArticleDetailView {
     var articleLinkSection: some View {
         Group {
             if let destinationURL = URL(string: article.url) {
@@ -147,13 +137,11 @@ private extension ArticleDetailView {
             }
         }
     }
-}
 
-private extension ArticleDetailView {
     var primaryAuthor: String {
         article.authors.first?.name.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     }
-    
+
     var formattedPublishedDate: String {
         if let date = ArticleDetailView.isoFormatterWithFractional.date(from: article.publishedAt) {
             return ArticleDetailView.displayFormatter.string(from: date)
@@ -163,19 +151,19 @@ private extension ArticleDetailView {
         }
         return ""
     }
-    
+
     static let isoFormatterWithFractional: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return formatter
     }()
-    
+
     static let isoFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime]
         return formatter
     }()
-    
+
     static let displayFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

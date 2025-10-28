@@ -40,7 +40,7 @@ struct HomeView: View {
     HomeView()
 }
 
-private extension HomeView {
+extension HomeView {
     var header: some View {
         VStack(alignment: .leading, spacing: 18) {
             searchBar
@@ -133,7 +133,6 @@ private extension HomeView {
                 } else {
                     ForEach(viewModel.articles) { article in
                         Button {
-                            print("clicked article \(article.id)")
                             viewModel.didSelect(article: article)
                         } label: {
                             ArticleRow(article: article)
