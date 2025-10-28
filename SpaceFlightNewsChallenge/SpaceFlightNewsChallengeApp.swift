@@ -10,9 +10,13 @@ import SwiftData
 
 @main
 struct SpaceFlightNewsChallengeApp: App {
+    @StateObject private var coordinator = AppCoordinator()
+
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            coordinator.start()
+            .preferredColorScheme(.light)
         }
+        .modelContainer(for: SearchHistoryEntry.self)
     }
 }
