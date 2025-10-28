@@ -37,6 +37,7 @@
 				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
+				Application/SearchView/SearchView.swift,
 				Coordinator/AppCoordinator.swift,
 				Coordinator/AppRoute.swift,
 				Coordinator/Router.swift,
@@ -48,6 +49,7 @@
 				Networking/Repositories/ArticlesRepository.swift,
 				Networking/Repositories/ArticlesRepositoryProtocol.swift,
 				Resources/AppDependencies.swift,
+				Resources/Utils/ColorsHelper.swift,
 			);
 			target = FC44ABEA2EAC114E00437A90 /* SpaceFlightNewsChallengeTests */;
 		};
@@ -58,6 +60,7 @@
 				Application/Home/ArticleRow.swift,
 				Application/Home/HomeView.swift,
 				Application/Home/HomeViewModel.swift,
+				Application/SearchView/SearchView.swift,
 				Coordinator/AppCoordinator.swift,
 				Coordinator/AppRoute.swift,
 				Coordinator/Router.swift,
@@ -69,6 +72,7 @@
 				Networking/Repositories/ArticlesRepository.swift,
 				Networking/Repositories/ArticlesRepositoryProtocol.swift,
 				Resources/AppDependencies.swift,
+				Resources/Utils/ColorsHelper.swift,
 			);
 			target = FC44ABF42EAC114E00437A90 /* SpaceFlightNewsChallengeUITests */;
 		};
@@ -86,12 +90,20 @@
 			);
 			target = FC44ABF42EAC114E00437A90 /* SpaceFlightNewsChallengeUITests */;
 		};
+		FC56B8642EB03CA20093FE2C /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallenge" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FC44ABDB2EAC114C00437A90 /* SpaceFlightNewsChallenge */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FC44ABDE2EAC114C00437A90 /* SpaceFlightNewsChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				FC56B8642EB03CA20093FE2C /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallenge" target */,
 				FC44AC0F2EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeTests" target */,
 				FC44AC102EAC126100437A90 /* Exceptions for "SpaceFlightNewsChallenge" folder in "SpaceFlightNewsChallengeUITests" target */,
 			);
@@ -465,9 +477,9 @@
 				DEVELOPMENT_TEAM = JB9XB6K43X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpaceFlightNewsChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,9 +509,9 @@
 				DEVELOPMENT_TEAM = JB9XB6K43X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpaceFlightNewsChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

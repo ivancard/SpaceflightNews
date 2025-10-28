@@ -67,7 +67,8 @@ extension Article {
             newsSite: "Test Site",
             summary: "Test summary",
             publishedAt: "2024-01-01T00:00:00Z",
-            updatedAt: "2024-01-01T00:00:00Z"
+            updatedAt: "2024-01-01T00:00:00Z",
+            authors: [ArticleAuthor(name: "Jeff Foust")]
         )
     }
 }

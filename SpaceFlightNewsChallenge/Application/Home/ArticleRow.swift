@@ -30,7 +30,7 @@ struct ArticleRow: View {
                         .font(.system(size: 12, weight: .medium))
                         .padding(.vertical, 4)
                         .padding(.horizontal, 10)
-                        .background(spaceIndigo)
+                        .background(ColorsHelper.mainDark)
                         .foregroundStyle(.white)
                         .clipShape(Capsule())
                     
@@ -103,10 +103,6 @@ private extension ArticleRow {
         return ArticleRow.displayFormatter.string(from: date)
     }
     
-    var spaceIndigo: Color {
-        Color(red: 0x21/255, green: 0x02/255, blue: 0x4F/255)
-    }
-    
     static let isoFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
@@ -132,7 +128,8 @@ private extension ArticleRow {
             newsSite: "SpaceNews",
             summary: "Summary",
             publishedAt: "2025-10-26T14:22:34Z",
-            updatedAt: "2025-10-26T14:30:27.289010Z"
+            updatedAt: "2025-10-26T14:30:27.289010Z",
+            authors: [ArticleAuthor(name: "Jeff Foust")]
         )
     )
 }

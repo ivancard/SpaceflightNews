@@ -17,5 +17,6 @@ struct SpaceFlightNewsChallengeApp: App {
             coordinator.start()
             .preferredColorScheme(.light)
         }
+        .modelContainer(for: SearchHistoryEntry.self)
     }
 }

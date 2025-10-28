@@ -12,6 +12,7 @@ internal import Combine
 @MainActor
 final class Router<R: Hashable>: ObservableObject {
     @Published var path = NavigationPath()
+    @Published var overlayRoute: R?
 
     func push(_ route: R) {
         print("[Router] push ->", route)
@@ -26,5 +27,15 @@ final class Router<R: Hashable>: ObservableObject {
     func popToRoot() {
         path = .init()
         print("[Router] popToRoot")
+    }
+
+    func presentOverlay(_ route: R) {
+        print("[Router] presentOverlay ->", route)
+        overlayRoute = route
+    }
+
+    func dismissOverlay() {
+        print("[Router] dismissOverlay")
+        overlayRoute = nil
     }
 }
