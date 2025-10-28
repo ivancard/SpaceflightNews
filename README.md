@@ -28,7 +28,7 @@ Aplicación iOS que consume la API pública de [Space Flight News](https://www.s
 
 ## Capturas de pantalla
 
-[app-images-example.png](app-images-example.png)
+![Capturas de pantalla de la app](app-images-example.png)
 
 ## Frameworks, Arquitectura y Patrones de diseño
 
