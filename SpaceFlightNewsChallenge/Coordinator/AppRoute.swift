@@ -10,4 +10,5 @@ import Foundation
 enum AppRoute: Hashable {
     case home
     case articleDetail(article: Article)
+    case searcher
 }

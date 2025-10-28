@@ -94,7 +94,7 @@ private extension ArticleDetailView {
             Text(article.newsSite)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text("Autor")
+            Text(article.authors.first?.name ?? "")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
@@ -117,6 +117,6 @@ private extension ArticleDetailView {
         newsSite: "SpaceNews",
         summary: "Japan launched the first of a new generation of cargo spacecraft to the International Space Station, with potential applications beyond low Earth orbit.\r\nThe post H3 launches first HTV-X cargo spacecraft appeared first on SpaceNews.",
         publishedAt: "2025-10-26T14:22:34Z",
-        updatedAt: "2025-10-26T14:30:27.289010Z"
+        updatedAt: "2025-10-26T14:30:27.289010Z", authors: [ArticleAuthor(name: "Jeff Foust")]
     ))
 }

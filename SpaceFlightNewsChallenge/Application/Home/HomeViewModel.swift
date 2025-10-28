@@ -15,17 +15,21 @@ class HomeViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var searchText = ""
+    @Published var isShowingSearchResults = false
     
     private let repository: ArticlesRepositoryProtocol
     private var searchTask: Task<Void, Never>?
     private let openArticle: (Article) -> Void
+    private let openSearch: () -> Void
     
     init(
         repository: ArticlesRepositoryProtocol,
-        openArticle: @escaping (Article) -> Void = { _ in }
+        openArticle: @escaping (Article) -> Void = { _ in },
+        openSearch: @escaping () -> Void = {}
     ) {
         self.repository = repository
         self.openArticle = openArticle
+        self.openSearch = openSearch
     }
     
     func loadArticles() async {
@@ -72,5 +76,31 @@ class HomeViewModel: ObservableObject {
     func didSelect(article: Article) {
         print("[HomeViewModel] didSelect article", article.id)
         openArticle(article)
+    }
+
+    func openSearchScreen() {
+        openSearch()
+    }
+
+    func applySearch(query: String) {
+        searchTask?.cancel()
+        searchText = query
+        repository.resetPagination()
+        isShowingSearchResults = !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+
+        Task {
+            await loadArticles()
+        }
+    }
+
+    func clearSearch() {
+        searchTask?.cancel()
+        searchText = ""
+        isShowingSearchResults = false
+        repository.resetPagination()
+
+        Task {
+            await loadArticles()
+        }
     }
 }

@@ -16,6 +16,7 @@ struct Article: Codable, Identifiable, Hashable {
     let summary: String
     let publishedAt: String
     let updatedAt: String
+    let authors: [ArticleAuthor]
     
     enum CodingKeys: String, CodingKey {
         case id, title, url
@@ -24,5 +25,10 @@ struct Article: Codable, Identifiable, Hashable {
         case summary
         case publishedAt = "published_at"
         case updatedAt = "updated_at"
+        case authors = "authors"
     }
+}
+
+struct ArticleAuthor: Codable, Hashable {
+    let name: String
 }
